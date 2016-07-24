@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #######################################################################
 #
-#  Sudoku
+#  E2Sudoku
 #  Version 0.1
 #  Support: www.vuplus-support.org
 #
@@ -27,7 +27,7 @@
 #######################################################################M
 
 from Plugins.Plugin import PluginDescriptor
-import Plugins.Extensions.Sudoku.Sudoku as SudokuModule
+import Plugins.Extensions.E2Sudoku.Sudoku as SudokuModule
 
 from __init__ import _
 

@@ -96,7 +96,7 @@ class Cell():
 class Sudoku(Screen):
 	version = "2016-07-24 0.1"
 	skin = """
-		<screen position="0,0" size="1920,1080" title="Sudoku" flags="wfNoBorder">
+		<screen name="E2Sudoku" position="0,0" size="1920,1080" title="Sudoku" flags="wfNoBorder">
 			<widget source="Canvas" render="Canvas" position="0,0" size="1080,1080" />
 			<widget name="runtime" position="1200,100" size="400,50" font="Regular;36"/>
 			<widget name="message" position="1200,175" size="700,50" font="Regular;30"/>
@@ -153,7 +153,7 @@ class Sudoku(Screen):
 		self.level = 0
 		self["level"] = Label(_("Level: %s") % (Sudoku.levelMap[self.level],))
 		
-		sudokudb = resolveFilename(SCOPE_PLUGINS, "Extensions/Sudoku/sudoku.db")
+		sudokudb = resolveFilename(SCOPE_PLUGINS, "Extensions/E2Sudoku/sudoku.db")
 		self.conn = open(sudokudb, "rb")
 		
 		self["runtime"] = Label()

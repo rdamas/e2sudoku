@@ -5,7 +5,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 import os, gettext
 
 PluginLanguageDomain = "Sudoku"
-PluginLanguagePath = "Extensions/Sudoku/locale"
+PluginLanguagePath = "Extensions/E2Sudoku/locale"
 
 def localeInit():
 	lang = language.getLanguage()[:2]
@@ -16,7 +16,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext(PluginLanguageDomain, txt)
 	if t == txt:
-		print "[Sudoku] fallback to default Enigma2 Translation for", txt
+		print "[E2Sudoku] fallback to default Enigma2 Translation for", txt
 		t = gettext.gettext(txt)
 	return t
 
