@@ -95,7 +95,7 @@ class Cell():
 		
 class Sudoku(Screen):
 	version = "2016-07-24 0.1"
-	skin = """
+	skin = { "fhd" : """
 		<screen name="E2Sudoku" position="0,0" size="1920,1080" title="Sudoku" flags="wfNoBorder">
 			<widget source="Canvas" render="Canvas" position="0,0" size="1080,1080" />
 			<widget name="runtime" position="1200,100" size="400,50" font="Regular;36"/>
@@ -106,16 +106,29 @@ class Sudoku(Screen):
 			<widget source="key_yellow" render="Label" position="1200,325" zPosition="1" size="250,50" font="Regular;24" halign="center" valign="center" backgroundColor="#f0f010" foregroundColor="#303030" transparent="0" />
 			<widget source="key_blue" render="Label" position="1500,325" zPosition="1" size="250,50" font="Regular;24" halign="center" valign="center" backgroundColor="#0000e0" foregroundColor="#ffffff" transparent="0" />
 		</screen>
-	"""
+	""",
 	
+			"hd" : """
+		<screen name="E2Sudoku" position="0,0" size="1280,720" title="Sudoku" flags="wfNoBorder">
+			<widget source="Canvas" render="Canvas" position="0,0" size="720,720" />
+			<widget name="runtime" position="800,66" size="400,33" font="Regular;24"/>
+			<widget name="message" position="800,117" size="400,33" font="Regular;20"/>
+			<widget name="level" position="800,167" size="400,33" font="Regular;20"/>
+			<widget source="key_red" render="Label" position="800,633" zPosition="1" size="190,33" font="Regular;16" halign="center" valign="center" backgroundColor="#f01010" foregroundColor="#ffffff" transparent="0" />
+			<widget source="key_green" render="Label" position="1000,633" zPosition="1" size="190,33" font="Regular;16" halign="center" valign="center" backgroundColor="#10a010" foregroundColor="#ffffff" transparent="0" />
+			<widget source="key_yellow" render="Label" position="800,217" zPosition="1" size="190,33" font="Regular;16" halign="center" valign="center" backgroundColor="#f0f010" foregroundColor="#303030" transparent="0" />
+			<widget source="key_blue" render="Label" position="1000,217" zPosition="1" size="190,33" font="Regular;16" halign="center" valign="center" backgroundColor="#0000e0" foregroundColor="#ffffff" transparent="0" />
+		</screen>
+	"""
+	}
 	levelMap = [ _("Beginner"), _("Simple"), _("Medium"), _("Hard"), _("Impossible")]
 	
 	def __init__(self, session):
-		self.skin = Sudoku.skin
+		self.adaptScreen()
+		
+		self.skin = Sudoku.skin[self.useskin]
 		self.session = session
 		Screen.__init__(self, session)
-		
-		self.adaptScreen()
 		
 		self["actions"] =  ActionMap(["ColorActions", "ChannelUpDownActions", "SetupActions", "DirectionActions"], {
 			"cancel":      self.cancel,
@@ -382,13 +395,16 @@ class Sudoku(Screen):
 			Cell.w = 50
 			Cell.h = 50
 			Cell.fontsize = 24
+			self.useskin = "hd"
 		elif self.fb_w < 1920:
 			Cell.w = 66
 			Cell.h = 66
 			Cell.fontsize = 30
+			self.useskin = "hd"
 		else:
 			Cell.w = 100
 			Cell.h = 100
 			Cell.fontsize = 48
+			self.useskin = "fhd"
 		
 	
