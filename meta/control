@@ -1,0 +1,10 @@
+Package: e2-sudoku
+Priority: optional
+Version: 0.1
+Architecture: all
+Maintainer: Robert Damas <rdamas>
+Description: E2 Sudoku is a nifty little Sudoku game. It comes with
+ a database of 5000 Sudoku boards in 5 different levels.
+Section: misc
+Homepage: https://github.com/rdamas/e2sudoku
+
