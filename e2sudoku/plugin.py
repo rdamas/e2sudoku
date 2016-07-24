@@ -42,6 +42,6 @@ def main(session, **kwargs):
 def Plugins(**kwargs):
 	return PluginDescriptor(
 		name="Sudoku", 
-		description=_("Sudoku"), 
+		description=_("A nifty little Sudoku game for Enigma2."), 
 		where = PluginDescriptor.WHERE_PLUGINMENU, 
 		fnc=main)

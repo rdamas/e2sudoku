@@ -108,7 +108,7 @@ class Sudoku(Screen):
 		</screen>
 	"""
 	
-	levelMap = [ _("Anfänger"), _("Einfach"), _("Mittel"), _("Schwer"), _("Unmöglich")]
+	levelMap = [ _("Beginner"), _("Simple"), _("Medium"), _("Hard"), _("Impossible")]
 	
 	def __init__(self, session):
 		self.skin = Sudoku.skin
@@ -145,10 +145,10 @@ class Sudoku(Screen):
 		
 		self["message"] = Label("")
 		
-		self["key_red"] = StaticText(_("Neu starten"))
-		self["key_green"] = StaticText(_("Neues Spiel"))
-		self["key_yellow"] = StaticText(_("Einfacher"))
-		self["key_blue"] = StaticText(_("Schwerer"))
+		self["key_red"] = StaticText(_("Start over"))
+		self["key_green"] = StaticText(_("New Board"))
+		self["key_yellow"] = StaticText(_("Simpler"))
+		self["key_blue"] = StaticText(_("Harder"))
 
 		self.level = 0
 		self["level"] = Label(_("Level: %s") % (Sudoku.levelMap[self.level],))
@@ -166,7 +166,7 @@ class Sudoku(Screen):
 		
 	def timerCallback(self):
 		self.runtime += 1
-		self["runtime"].setText(_("Stoppuhr: %02d:%02d") % (self.runtime / 60, self.runtime % 60))
+		self["runtime"].setText(_("Stop watch: %02d:%02d") % (self.runtime / 60, self.runtime % 60))
 	
 	# Für ein neues Spiel wird lediglich die gamenum neu gewürfelt und
 	# dann das Board neu aufgebaut.
@@ -216,7 +216,7 @@ class Sudoku(Screen):
 		self["Canvas"].flush()
 		self.isTimerRunning = False
 		self.runtime = 0
-		self["runtime"].setText(_("Stoppuhr: %02d:%02d") % (0,0))
+		self["runtime"].setText(_("Stop watch: %02d:%02d") % (0,0))
 	
 	def getBoard(self, num):
 		self.conn.seek(41 * num)
@@ -350,9 +350,9 @@ class Sudoku(Screen):
 			if self.isSolved():
 				self.timer.stop()
 				self.isTimerRunning = False
-				self["message"].setText(_("Du hast das Rätsel gelöst."))
+				self["message"].setText(_("You solved the Board."))
 			else:
-				self["message"].setText(_("Das Board enthält noch Fehler."))
+				self["message"].setText(_("The Board contains errors."))
 	
 	# Prüfen, ob ein Board gelöst ist. Dazu müssen alle Zeilen- und 
 	# Spaltensummen 45 betragen (Summe der Zahlen 1-9)

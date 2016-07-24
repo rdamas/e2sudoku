@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sudoku\n"
+"POT-Creation-Date: 2016-07-24 15:37+0200\n"
+"PO-Revision-Date: 2016-07-24 15:38+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: Sudoku.py\n"
+"X-Poedit-SearchPath-1: plugin.py\n"
+
+#: Sudoku.py:111
+msgid "Beginner"
+msgstr "Anfänger"
+
+#: Sudoku.py:111
+msgid "Simple"
+msgstr "Einfach"
+
+#: Sudoku.py:111
+msgid "Medium"
+msgstr "Mittel"
+
+#: Sudoku.py:111
+msgid "Hard"
+msgstr "Schwer"
+
+#: Sudoku.py:111
+msgid "Impossible"
+msgstr "Unmöglich"
+
+#: Sudoku.py:148
+msgid "Start over"
+msgstr "Neu starten"
+
+#: Sudoku.py:149
+msgid "New Board"
+msgstr "Neues Spiel"
+
+#: Sudoku.py:150
+msgid "Simpler"
+msgstr "Einfacher"
+
+#: Sudoku.py:151
+msgid "Harder"
+msgstr "Schwerer"
+
+#: Sudoku.py:154 Sudoku.py:369 Sudoku.py:374
+#, python-format
+msgid "Level: %s"
+msgstr "Level: %s"
+
+#: Sudoku.py:169 Sudoku.py:219
+#, python-format
+msgid "Stop watch: %02d:%02d"
+msgstr "Stoppuhr: %02d:%02d"
+
+#: Sudoku.py:184
+#, python-format
+msgid "Sudoku #%d"
+msgstr "Sudoku #%d"
+
+#: Sudoku.py:353
+msgid "You solved the Board."
+msgstr "Du hast das Board gelöst."
+
+#: Sudoku.py:355
+msgid "The Board contains errors."
+msgstr "Das Board enthält noch Fehler"
+
+#: plugin.py:45
+msgid "A nifty little Sudoku game for Enigma2."
+msgstr "Ein Sudoku-Spiel für Enigma2."

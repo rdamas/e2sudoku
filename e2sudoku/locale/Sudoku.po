@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sudoku\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-24 15:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Sudoku.py:111
+msgid "Beginner"
+msgstr ""
+
+#: Sudoku.py:111
+msgid "Simple"
+msgstr ""
+
+#: Sudoku.py:111
+msgid "Medium"
+msgstr ""
+
+#: Sudoku.py:111
+msgid "Hard"
+msgstr ""
+
+#: Sudoku.py:111
+msgid "Impossible"
+msgstr ""
+
+#: Sudoku.py:148
+msgid "Start over"
+msgstr ""
+
+#: Sudoku.py:149
+msgid "New Board"
+msgstr ""
+
+#: Sudoku.py:150
+msgid "Simpler"
+msgstr ""
+
+#: Sudoku.py:151
+msgid "Harder"
+msgstr ""
+
+#: Sudoku.py:154 Sudoku.py:369 Sudoku.py:374
+#, python-format
+msgid "Level: %s"
+msgstr ""
+
+#: Sudoku.py:169 Sudoku.py:219
+#, python-format
+msgid "Stop watch: %02d:%02d"
+msgstr ""
+
+#: Sudoku.py:184
+#, python-format
+msgid "Sudoku #%d"
+msgstr ""
+
+#: Sudoku.py:353
+msgid "You solved the Board."
+msgstr ""
+
+#: Sudoku.py:355
+msgid "The Board contains errors."
+msgstr ""
+
+#: plugin.py:45
+msgid "A nifty little Sudoku game for Enigma2."
+msgstr ""
