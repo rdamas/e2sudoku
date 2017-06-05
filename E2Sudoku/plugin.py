@@ -2,10 +2,10 @@
 #######################################################################
 #
 #  E2Sudoku
-#  Version 0.1
+#  Version 0.1.1
 #  Support: www.vuplus-support.org
 #
-#  Copyright (c) 2016 by Robert Damas
+#  Copyright (c) 2016,2017 by Robert Damas
 #  All rights reserved.
 #
 #  Permission to use, copy, modify, and distribute this software for any

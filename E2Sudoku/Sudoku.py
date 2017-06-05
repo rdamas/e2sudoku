@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from enigma import eTimer, getDesktop, gFont, RT_HALIGN_CENTER, RT_VALIGN_CENTER
-from Components.ActionMap import ActionMap
+from Components.ActionMap import NumberActionMap
 from Components.Label import Label
 from Components.Sources.CanvasSource import CanvasSource   
 from Components.Sources.StaticText import StaticText   
@@ -49,6 +49,8 @@ class Cell():
 	
 	def setVal(self, val):
 		if not self.isReadOnly:
+			if val == 0:
+				val = " "
 			self.val = val
 		return self
 	
@@ -94,7 +96,7 @@ class Cell():
 		return self
 		
 class Sudoku(Screen):
-	version = "2016-07-24 0.1"
+	version = "2017-06-05 0.1.1"
 	skin = { "fhd" : """
 		<screen name="E2Sudoku" position="0,0" size="1920,1080" title="Sudoku" flags="wfNoBorder">
 			<widget source="Canvas" render="Canvas" position="0,0" size="1080,1080" />
@@ -130,7 +132,7 @@ class Sudoku(Screen):
 		self.session = session
 		Screen.__init__(self, session)
 		
-		self["actions"] =  ActionMap(["ColorActions", "ChannelUpDownActions", "SetupActions", "DirectionActions"], {
+		self["actions"] =  NumberActionMap(["ColorActions", "ChannelUpDownActions", "SetupActions", "DirectionActions"], {
 			"cancel":      self.cancel,
 			"up":          self.moveUp,
 			"down":        self.moveDown,
@@ -142,16 +144,16 @@ class Sudoku(Screen):
 			"green":       self.newGame,
 			"yellow":      self.levelDown,
 			"blue":        self.levelUp,
-			"0":           self.enter0,
-			"1":           self.enter1,
-			"2":           self.enter2,
-			"3":           self.enter3,
-			"4":           self.enter4,
-			"5":           self.enter5,
-			"6":           self.enter6,
-			"7":           self.enter7,
-			"8":           self.enter8,
-			"9":           self.enter9,
+			"0":           self.enter,
+			"1":           self.enter,
+			"2":           self.enter,
+			"3":           self.enter,
+			"4":           self.enter,
+			"5":           self.enter,
+			"6":           self.enter,
+			"7":           self.enter,
+			"8":           self.enter,
+			"9":           self.enter,
 		}, -1)
 		
 		self["Canvas"] = CanvasSource()
@@ -297,38 +299,10 @@ class Sudoku(Screen):
 		cell = self.board[self.x + self.y*9]
 		cell.setFocus(True).draw()
 	
-	def enter0(self):
-		self.enter(" ")
-	
-	def enter1(self):
-		self.enter("1")
-	
-	def enter2(self):
-		self.enter("2")
-	
-	def enter3(self):
-		self.enter("3")
-	
-	def enter4(self):
-		self.enter("4")
-	
-	def enter5(self):
-		self.enter("5")
-	
-	def enter6(self):
-		self.enter("6")
-		
-	def enter7(self):
-		self.enter("7")
-	
-	def enter8(self):
-		self.enter("8")
-	
-	def enter9(self):
-		self.enter("9")
-	
 	# Zahlentasten am Board darstellen
-	def enter(self,val):
+	def enter(self, val):
+		if val == "0":
+			val = " "
 		# Muss der Timer gestartet werden?
 		if not self.isTimerRunning:
 			if self.fieldsSet == 81:

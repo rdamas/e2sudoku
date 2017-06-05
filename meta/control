@@ -1,6 +1,6 @@
 Package: E2Sudoku
 Priority: optional
-Version: 0.1
+Version: 0.1.1
 Architecture: all
 Maintainer: Robert Damas <rdamas>
 Description: E2 Sudoku is a nifty little Sudoku game. It comes with
